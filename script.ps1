@@ -43,6 +43,7 @@ $LabelTxt.Font = New-Object System.Drawing.Font('Microsoft Sans Serif', 12)
 $psGui.controls.AddRange(@($ButtonMsgBx, $ButtonLblTxt, $ButtonPthDlg, $LabelTxt))
 #####################END BUILD THE GUI################################
 ######################################################################
+######################DEFINE FUNCTIONS################################
 function showMsgBox() {
     [System.Windows.Forms.MessageBox]::Show("Pretty nice Text","MY MESSAGEBOX",0)
 }
@@ -59,7 +60,8 @@ function showPath(){
 		$LabelTxt.Text += "Pfad: " + $ordnerpfad + "`n"
     }
 }
-
+######################END DEFINE FUNCTIONS#############################
+#Link the Functions with the Buttons
 $ButtonMsgBx.Add_Click({showMsgBox})
 $ButtonLblTxt.Add_Click({setLblText})
 $ButtonPthDlg.Add_Click({showPath})
